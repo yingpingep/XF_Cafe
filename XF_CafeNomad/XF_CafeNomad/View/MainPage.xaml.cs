@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace XF_CafeNomad
+namespace XF_CafeNomad.View
 {
     public partial class MainPage : ContentPage
     {

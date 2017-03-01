@@ -20,7 +20,7 @@ namespace XF_CafeNomad.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
+            Xamarin.FormsGoogleMaps.Init("MyKey");
             LoadApplication(new XF_CafeNomad.App());
         }
     }

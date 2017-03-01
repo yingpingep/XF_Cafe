@@ -13,7 +13,7 @@ namespace XF_CafeNomad
         {
             InitializeComponent();
 
-            MainPage = new XF_CafeNomad.MainPage();
+            MainPage = new XF_CafeNomad.View.MainPage();
         }
 
         protected override void OnStart()
