@@ -12,35 +12,32 @@ namespace XF_CafeNomad.Service
 {
     class CafeInfor
     {
-        class CafeUse
+        private List<CafeShop> cafeShops;
+        private HttpClient httpClient = new HttpClient();
+        private string city;
+
+        public CafeInfor(string city = "Not Select")
         {
-            private List<CafeShop> cafeShops;
-            private HttpClient httpClient = new HttpClient();
-            private string city;
-
-            public CafeUse(string city = "Not Select")
+            this.city = city;
+        }
+        public async Task<List<CafeShop>> GetShopsAsync()
+        {
+            string cafeUrl;
+            if (city.Equals("Not Select"))
             {
-                this.city = city;
+                cafeUrl = Constant.CafenomadUrl;
             }
-            public async Task<List<CafeShop>> GetShopsAsync()
+            else
             {
-                string cafeUrl;
-                if (city.Equals("Not Select"))
-                {
-                    cafeUrl = Constant.CafenomadUrl;
-                }
-                else
-                {
-                    cafeUrl = Constant.CafenomadUrl + city;
-                }
-
-                var respone = await httpClient.GetAsync(cafeUrl);
-                var rawData = await respone.Content.ReadAsStringAsync();
-
-                cafeShops = JsonConvert.DeserializeObject<List<CafeShop>>(rawData,
-                        new JsonSerializerSettings() { Culture = new System.Globalization.CultureInfo("zh-TW") });
-                return cafeShops;
+                cafeUrl = Constant.CafenomadUrl + city;
             }
+
+            var respone = await httpClient.GetAsync(cafeUrl);
+            var rawData = await respone.Content.ReadAsStringAsync();
+
+            cafeShops = JsonConvert.DeserializeObject<List<CafeShop>>(rawData,
+                    new JsonSerializerSettings() { Culture = new System.Globalization.CultureInfo("zh-TW") });
+            return cafeShops;
         }
     }
 }

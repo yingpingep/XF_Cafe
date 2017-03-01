@@ -15,6 +15,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using ImageCircle.Forms.Plugin.UWP;
+using System.Reflection;
+
 namespace XF_CafeNomad.UWP
 {
     /// <summary>
@@ -58,7 +61,11 @@ namespace XF_CafeNomad.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                // Xamarin.Forms.Forms.Init(e);
+                // TODO: Add Three-part plugin
+                List<Assembly> assembliesToInclude = new List<Assembly>();
+                assembliesToInclude.Add(typeof(ImageCircleRenderer).GetTypeInfo().Assembly);
+                Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

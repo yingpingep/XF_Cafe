@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using ImageCircle.Forms.Plugin.UWP;
+
 namespace XF_CafeNomad.UWP
 {
     public sealed partial class MainPage
@@ -20,7 +22,8 @@ namespace XF_CafeNomad.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            Xamarin.FormsGoogleMaps.Init("MyKey");
+            Xamarin.FormsMaps.Init("117PalmDboENQswr0Aef~D1ZWrDyHe3jqUdI2ZOSlWg~Alp_pY07cSBEUISJPcCikNRV3cnmM6q99ewE6yzCyB3oiwd5WKQblbtAvPZYyfQz");
+            ImageCircleRenderer.Init();
             LoadApplication(new XF_CafeNomad.App());
         }
     }

@@ -26,5 +26,6 @@ namespace XF_CafeNomad.Model
         public string standing_desk { get; set; }
         public string mrt { get; set; }
         public string open_time { get; set; }
+        public string img_url { get; set; }
     }
 }

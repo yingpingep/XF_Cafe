@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using ImageCircle.Forms.Plugin.Droid;
+
 namespace XF_CafeNomad.Droid
 {
     [Activity(Label = "XF_CafeNomad", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -20,7 +22,9 @@ namespace XF_CafeNomad.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            Xamarin.FormsGoogleMaps.Init(this, bundle);
+            Xamarin.FormsMaps.Init(this, bundle);
+            ImageCircleRenderer.Init();
+
             LoadApplication(new App());
         }
     }
