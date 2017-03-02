@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using XF_CafeNomad.Service;
-using ImageCircle.Forms.Plugin.Abstractions;
+using XF_CafeNomad.Model;
 
 namespace XF_CafeNomad.View
 {
@@ -23,6 +23,12 @@ namespace XF_CafeNomad.View
             });
 
             SuggestShopList.ItemsSource = t.Result;
+        }
+
+        private async void SuggestShopList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            CafeShop selectedItem = e.SelectedItem as CafeShop;
+            await Navigation.PushAsync(new MapPage(selectedItem));
         }
     }
 }
