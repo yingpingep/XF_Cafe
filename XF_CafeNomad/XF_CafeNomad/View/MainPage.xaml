@@ -4,13 +4,15 @@
              xmlns:local="clr-namespace:XF_CafeNomad"
              xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="XF_CafeNomad.View.MainPage">
+    <!--
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
                     iOS="0, 20, 0, 0"
                     Android="0"
                     WinPhone="0"/>
     </ContentPage.Padding>
-
+    -->
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ItemLabel" TargetType="Label">
@@ -33,7 +35,7 @@
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout Margin="8, 5, 8, 10">
-                            <Grid ColumnSpacing="5"
+                            <Grid ColumnSpacing="3"
                                   VerticalOptions="Center"
                                   HorizontalOptions="Start">
                                 <Grid.ColumnDefinitions>
