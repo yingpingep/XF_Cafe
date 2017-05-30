@@ -32,11 +32,10 @@ namespace XF_CafeNomad.Service
                 cafeUrl = Constant.CafenomadUrl + city;
             }
 
-            var respone = await httpClient.GetAsync(cafeUrl);
-            var rawData = await respone.Content.ReadAsStringAsync();
+            var response = await httpClient.GetAsync(cafeUrl);
+            var rawData = await response.Content.ReadAsStringAsync();
 
-            cafeShops = JsonConvert.DeserializeObject<List<CafeShop>>(rawData,
-                    new JsonSerializerSettings() { Culture = new System.Globalization.CultureInfo("zh-TW") });
+            cafeShops = JsonConvert.DeserializeObject<List<CafeShop>>(rawData);
             return cafeShops;
         }
     }

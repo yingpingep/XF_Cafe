@@ -16,7 +16,7 @@ namespace XF_CafeNomad.View
         public MapPage(CafeShop selectedItem)
         {
             InitializeComponent();
-
+            
             var position = new Position(selectedItem.latitude, selectedItem.longitude);
             var pin = new Pin
             {

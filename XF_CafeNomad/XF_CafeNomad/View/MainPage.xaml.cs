@@ -22,6 +22,9 @@ namespace XF_CafeNomad.View
                 return cafeinfor.GetShopsAsync();
             });
 
+            Button btn = new Button();
+            btn.Text = "Click Me!";
+
             SuggestShopList.ItemsSource = t.Result;
         }
 
